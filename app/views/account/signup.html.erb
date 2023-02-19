@@ -1,0 +1,47 @@
+<h2>Signup</h2>
+<%= form_with url: "/account/signup", method: :post do |f| %>
+    <% if @user.errors.any? %>
+     <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+     </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :first_name %><br />
+      <%= f.text_field :first_name %>
+    </div>
+    <div class="field">
+      <%= f.label :last_name %><br />
+      <%= f.text_field :last_name %>
+    </div>
+    <div class="field">
+      <%= f.label :mobile %><br />
+      <%= f.text_field :mobile %>
+    </div>
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.text_field :email %>
+    </div>
+    <div class="field">
+      <%= f.label :password %><br />
+      <%= f.password_field :password %>
+    </div>
+    <div class="field">
+      <%= f.label :confirm_password %><br />
+      <%= f.password_field :password_confirmation %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Create Account"%>
+    </div>
+
+<% end %>
+
+
+     
